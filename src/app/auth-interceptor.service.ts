@@ -17,14 +17,15 @@ export class AuthInterceptorService  implements HttpInterceptor {
       console.log(environment.apiURL);
 
       if (data) {
-          let json = JSON.parse(data);
-          let token = json['token'];
+          console.log("What? ", data);
+          //let json = JSON.parse(data);
+          //let token = json['token'];
 
 
           event = req.clone({
               url: AuthInterceptorService.url + req.url,
               setHeaders: {
-                  'token': `${token}`              }
+                  'token': `${data}`              }
           });
       } else {
           event = req.clone({

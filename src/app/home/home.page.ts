@@ -22,13 +22,13 @@ export class HomePage {
   async getCode(){
     this.code = localStorage.getItem('code');
     console.log("Current Code: ", this.code);
-    if (this.code.length > 0){
+    if (this.code != null){
       this.loginWithCode();
     } else {
+      console.log("Code: ", this.code);
       this.rest.get('api/v1/code').subscribe(res => {
         console.log("Code", res);
-        this.code = res;
-      
+        this.code = res;      
       });
     }
   }
