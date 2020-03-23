@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL: 'http://api.patientsoothe.com/'
+  apiURL: 'https://api.patientsoothe.com/'
   //apiURL: 'http://localhost:1339/'
 
 };

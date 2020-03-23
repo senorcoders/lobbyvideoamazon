@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiURL: 'https://lobbyvideoapi.senorcoders.com/'
+  apiURL: 'https://api.patientsoothe.com/'
 
 };
