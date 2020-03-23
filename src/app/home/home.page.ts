@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
   code:any = "CODE";
+  
   constructor(private rest: RestService,
     private router: Router) {
   }
@@ -29,21 +30,27 @@ export class HomePage {
       this.rest.get('api/v1/code').subscribe(res => {
         console.log("Code", res);
         this.code = res;      
+        localStorage.setItem("code", this.code);
       });
     }
   }
 
 
   loginWithCode(){
-    this.rest.getData('api/v1/logincode/' + this.code).subscribe(res => {
-      console.log("Res", res);
-      localStorage.setItem("code", this.code);
-      this.goToLobby();
-    })
+    if (this.code == null){
+      this.getCode();
+    } else {
+      this.rest.getData('api/v1/logincode/' + this.code).subscribe(res => {
+        console.log("Res", res);
+        //localStorage.setItem("code", this.code);
+        this.goToLobby(res);
+      });
+    }
   }
 
-  goToLobby(){
-    this.router.navigate(['lobby']);
+  goToLobby(video){
+    console.log("Video: ", video);
+    this.router.navigate(['lobby',{'video':video}]);
 
   }
 }

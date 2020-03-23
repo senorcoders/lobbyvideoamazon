@@ -14,10 +14,11 @@ export class RestService {
   }
 
   get(endpoint){
+    console.log("In Rest: ", endpoint);
     return this.http.get(endpoint,  {responseType: 'text'});
   }
 
   getData(endpoint){
-    return this.http.get(endpoint);
+    return this.http.get(endpoint, {responseType: 'text'});
   }
 }

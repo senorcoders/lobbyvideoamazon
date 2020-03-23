@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiURL: 'https://lobbyvideoapi.senorcoders.com/'
+  apiURL: 'http://api.patientsoothe.com/'
+  //apiURL: 'http://localhost:1339/'
 
 };
 
