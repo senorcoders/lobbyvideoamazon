@@ -17,7 +17,7 @@ export class LobbyPage implements OnInit {
       // This is how we can automatically go to another page based on the request
       // If the tab doesn't change in the navigation, page refreshes won't happen
       console.log("Params 1st: ", params['video']);
-      this.lobbyvideo = environment.apiURL + 'images/' + params['video'];
+      this.lobbyvideo = params['video'];
       console.log('video', this.lobbyvideo);
       //this.lobbyvideo = params['video'];
       
